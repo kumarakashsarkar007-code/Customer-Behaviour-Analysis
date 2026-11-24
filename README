@@ -1,113 +1,265 @@
 # Customer Behaviour Analysis
 
-An end-to-end Data Analytics project focused on understanding customer shopping patterns, purchasing behaviour, product preferences, discounts, subscriptions, and customer loyalty using **Python, MySQL, and Power BI**.
+An end-to-end Data Analytics project focused on understanding customer shopping patterns, product preferences, purchasing behaviour, discounts, subscriptions, and customer loyalty using **Python, MySQL, and Power BI**.
 
-## Project Overview
+---
 
-This project analyses 3,900 customer purchase records to understand customer behaviour and identify meaningful business insights. The analysis helps understand purchasing trends, customer preferences, revenue patterns, and factors influencing buying decisions.
+## 📌 Project Overview
 
-The project follows an end-to-end data analytics workflow, including data cleaning and exploratory data analysis using Python, SQL-based business analysis using MySQL, and interactive dashboard development using Power BI.
+This project analyses **3,900 customer purchase records** to understand shopping behaviour and identify meaningful business insights.
 
-## Project Objectives
+The project follows an end-to-end data analytics workflow, including data cleaning and exploratory data analysis using Python, business-focused SQL querying using MySQL, and interactive dashboard development using Power BI.
 
-- Analyse customer demographics and purchasing patterns.
-- Understand revenue and spending behaviour across customer segments.
-- Examine subscription trends and repeat purchases.
-- Identify popular products and highly rated categories.
-- Analyse discount usage and its impact on purchasing behaviour.
-- Compare shipping methods and customer spending.
-- Build an interactive Power BI dashboard to present key business insights.
+## 🎯 Project Objectives
 
-## Dataset
+- Understand customer demographics and purchasing patterns.
+- Compare revenue and spending across different customer groups.
+- Examine subscription behaviour and repeat purchases.
+- Identify popular, highly rated, and discount-dependent products.
+- Analyse shipping methods and their relationship with purchase amounts.
+- Present key metrics and trends through an interactive Power BI dashboard.
+
+---
+
+## 📂 Dataset Description
 
 The dataset contains **3,900 rows and 18 columns**.
 
-Key information includes:
+| Category | Fields |
+|:---|:---|
+| Customer Demographics | Age, Gender, Location, Subscription Status |
+| Purchase Details | Item Purchased, Category, Purchase Amount, Season, Size, Color |
+| Shopping Behaviour | Discount Applied, Previous Purchases, Frequency of Purchases |
+| Customer Feedback & Fulfilment | Review Rating, Shipping Type |
 
-- Customer demographics: Age, Gender, Location, Subscription Status.
-- Purchase details: Item Purchased, Category, Purchase Amount, Season, Size, Color.
-- Shopping behaviour: Discount Applied, Previous Purchases, Frequency of Purchases.
-- Customer feedback and fulfilment: Review Rating, Shipping Type.
+**Data Quality & Cleaning:**
 
-**Data Cleaning:** The dataset contained 37 missing values in the Review Rating column, which were handled using the median review rating within each product category.
+- The original dataset contained 37 missing values in the `Review Rating` column.
+- Missing values were imputed using the median review rating within each product category.
 
-## Tools & Technologies
+> Note: The original dataset is not included in this repository. Ensure you have permission before publishing any source data.
 
-- **Jupyter Notebook(Python):** Pandas, NumPy, Data Cleaning and Exploratory Data Analysis (EDA).
-- **MySQL:** SQL querying, data analysis, and business insights.
-- **Power BI:** Interactive dashboards and data visualization.
+---
 
-## Project Workflow
+## 🛠️ Tools & Technologies
 
-### 1. Data Loading and Exploration
+| Tool | Purpose |
+|:---|:---|
+| **Python** | Data cleaning, manipulation, and exploratory data analysis |
+| **Pandas & NumPy** | Data processing and analysis |
+| **MySQL** | SQL querying and business analysis |
+| **Power BI Desktop** | Interactive dashboards and data visualization |
+| **Jupyter Notebook** | Python analysis and documentation |
+
+---
+
+## 🔄 Project Workflow
+
+### 1. Data Loading & Exploration
+
 - Imported the customer shopping dataset using Pandas.
 - Examined dataset structure, data types, and descriptive statistics.
 - Identified missing values and checked data consistency.
 
-### 2. Data Cleaning and Preparation
+### 2. Data Cleaning & Preparation
+
 - Handled missing values using category-wise median imputation.
-- Standardized column names.
-- Created additional features such as Age Group.
-- Derived purchase frequency in days.
-- Checked relationships between discount and promotional code columns.
+- Standardized column names using `snake_case`.
+- Created an `age_group` feature.
+- Derived `purchase_frequency_days` from purchase-frequency information.
+- Examined the relationship between `discount_applied` and `promo_code_used`.
+- Removed the redundant `promo_code_used` field.
 
 ### 3. MySQL Database Integration
+
 - Connected Python with MySQL.
-- Loaded the cleaned dataset into the MySQL database.
-- Used SQL queries to perform business-focused analysis.
+- Loaded the cleaned DataFrame into the MySQL database.
+- Prepared the dataset for SQL-based analysis.
 
 ### 4. SQL Business Analysis
-Performed SQL analysis to identify customer purchasing trends, revenue patterns, product performance, discount usage, and subscription behaviour.
 
-### 5. Power BI Dashboard
+Used MySQL queries to investigate customer purchasing trends, revenue patterns, product performance, discount usage, shipping preferences, and subscription behaviour.
+
+### 5. Power BI Dashboard Development
+
 - Developed an interactive Customer Behavior Dashboard.
 - Created KPI cards and multiple visualizations.
 - Added interactive slicers for customer segmentation.
-- Applied a modern Dark Navy theme with blue, cyan, and purple accents.
+- Applied a modern **Dark Navy theme** with blue, cyan, and purple accents.
 
-## Business Questions Explored
+---
+
+## 🔍 Business Questions Explored
+
+The project addresses the following 10 business questions using SQL:
 
 1. **Revenue by Gender:** How does total revenue compare between male and female customers?
+
 2. **High-Spending Discount Users:** Which customers used discounts but still spent above the average purchase amount?
+
 3. **Top 5 Products by Rating:** Which products have the highest average review ratings?
+
 4. **Shipping Type Comparison:** How do average purchase amounts compare between Standard and Express shipping?
+
 5. **Subscribers vs. Non-Subscribers:** How do average spending and total revenue differ by subscription status?
+
 6. **Discount-Dependent Products:** Which five products have the highest percentage of discounted purchases?
+
 7. **Customer Segmentation:** How can customers be classified as New, Returning, or Loyal based on purchase history?
+
 8. **Top Products by Category:** What are the top three most-purchased products in each category?
-9. **Repeat Buyers and Subscriptions:** Are customers with more than five purchases more likely to subscribe?
+
+9. **Repeat Buyers & Subscriptions:** Are customers with more than five purchases more likely to subscribe?
+
 10. **Revenue by Age Group:** Which age groups contribute the most revenue?
 
-## Power BI Dashboard
+---
 
-The dashboard provides an interactive overview of customer purchasing behaviour.
+## 📊 Power BI Dashboard
+
+The Power BI dashboard provides an interactive overview of customer purchasing behaviour.
 
 ### Key Performance Indicators (KPIs)
+
 - Total Number of Customers
 - Average Purchase Amount
 - Average Review Rating
 
-### Visualizations
-- Percentage of Customers by Subscription Status
-- Revenue by Category
-- Sales by Category
+### Data Visualizations
+
+- Customer Distribution by Subscription Status
+- Revenue by Product Category
+- Sales by Product Category
 - Revenue by Age Group
 - Sales by Age Group
 
-### Interactive Filters
+### Interactive Filters (Slicers)
+
 - Subscription Status
 - Gender
 - Product Category
 - Shipping Type
 
-**Dashboard Design:** A modern Dark Navy theme with blue, cyan, and purple accents for a clean and professional visual experience.
+### Dashboard Design
 
-## Key Business Recommendations
+The dashboard features a modern **Dark Navy theme** with:
 
-- **Subscription Growth:** Encourage non-subscribers to subscribe through targeted promotional campaigns.
-- **Customer Loyalty:** Develop loyalty programs to encourage repeat purchases.
+- Deep navy background
+- Electric blue and cyan accents
+- Purple highlights
+- High-contrast text
+- Interactive filters and visualizations
+
+---
+
+## 💡 Key Business Recommendations
+
+Based on the analysis areas explored in this project, the following recommendations can help businesses improve customer engagement and purchasing performance.
+
+- **Subscription Growth:** Promote subscriber benefits and encourage non-subscribers to explore subscription options.
+
+- **Customer Loyalty:** Introduce loyalty programs and rewards to encourage repeat purchases.
+
 - **Discount Optimization:** Evaluate discount-dependent products and improve promotional strategies.
-- **Product Performance:** Focus on popular and highly rated products to improve customer engagement.
-- **Customer Segmentation:** Develop targeted marketing strategies based on customer demographics and purchasing behaviour.
-- **Shipping Optimization:** Analyse customer shipping preferences to improve fulfilment strategies.
 
+- **Product Performance:** Focus on popular and highly rated products to improve customer engagement.
+
+- **Customer Segmentation:** Develop targeted marketing strategies based on customer demographics and purchasing behaviour.
+
+- **Shipping Optimization:** Analyse shipping preferences to improve fulfilment strategies and customer satisfaction.
+
+---
+
+## 📁 Repository Contents
+
+| File Name | Description |
+|:---|:---|
+| `customer_behavior_dashboard.pbix` | Original Power BI dashboard |
+| `customer_behavior_dashboard_dark_navy.pbix` | Dark Navy themed Power BI dashboard |
+| `customer_behavior_dark_navy_theme.json` | Custom Power BI theme |
+| `Customer Shopping Behavior Analysis.pdf` | Project documentation and analysis report |
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-github-repository-url>
+cd <your-repository-folder>
+```
+
+### 2. Review the Project Report
+
+Open `Customer Shopping Behavior Analysis.pdf` to explore the project methodology, business questions, SQL analysis, and recommendations.
+
+### 3. Run the Python Analysis
+
+If the Jupyter Notebook is included in the repository, install the required libraries:
+
+```bash
+pip install pandas numpy sqlalchemy pymysql jupyter
+```
+
+Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+Open the project notebook and update the dataset path and MySQL connection settings.
+
+### 4. Perform SQL Analysis Using MySQL
+
+- Create a MySQL database.
+- Load the cleaned dataset into the database.
+- Open the SQL script, if included.
+- Execute the queries to explore customer behaviour and business insights.
+
+### 5. Open the Power BI Dashboard
+
+- Open `customer_behavior_dashboard_dark_navy.pbix` in Power BI Desktop.
+- Update the data source credentials or database connection if prompted.
+- Refresh the data.
+- Use the interactive slicers to explore different customer segments and purchasing patterns.
+
+**To import the custom theme:**
+
+1. Open Power BI Desktop.
+2. Navigate to **View → Themes → Browse for themes**.
+3. Select `customer_behavior_dark_navy_theme.json`.
+4. Apply the theme to your report.
+
+---
+
+## ⚠️ Notes & Limitations
+
+- Dashboard figures may change when the report is refreshed or when interactive slicers are applied.
+- The documented dataset contains 3,900 records. Verify the data source and refresh status before comparing figures.
+- The `Total Sales` measure represents transaction count only if each row corresponds to one purchase record.
+- The Python notebook, SQL scripts, and original dataset should be added separately if you want others to reproduce the complete analysis.
+- Check data permissions before publishing source files on GitHub.
+
+---
+
+## 🔮 Future Improvements
+
+- Implement advanced customer segmentation.
+- Analyse seasonal purchasing trends.
+- Explore customer retention and loyalty patterns.
+- Add profitability and revenue forecasting.
+- Develop additional interactive dashboard insights.
+- Improve reporting through advanced Power BI features.
+
+---
+
+## 👨‍💻 Author
+
+**Akash Kumar Sarkar**
+
+*Data Analytics Portfolio Project*
+
+---
+
+⭐ If you find this project useful, feel free to star the repository!
